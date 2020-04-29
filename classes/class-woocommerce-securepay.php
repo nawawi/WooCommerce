@@ -3,8 +3,8 @@
 class WC_Gateway_securepay extends WC_Payment_Gateway
 {
     public $id = 'securepay';
-    private $live_url = "https://SecurePay.my/api/v1/payments";
-    private $sandbox_url = "https://SecurePay.my/sandbox-api/v1/payments";
+    private $live_url = "https://securepay.my/api/v1/payments";
+    private $sandbox_url = "https://securepay.my/sandbox-api/v1/payments";
     private $log;
 
     public function __construct()
@@ -344,7 +344,7 @@ class WC_Gateway_securepay extends WC_Payment_Gateway
                 $this->log("Payment Successfully for order ID ".$response_params['order_number']." \n with return data \n".print_r($response_params, true));
 
                 $order->payment_complete();
-                $success = "Securepay.my payment successful<br>";
+                $success = "SecurePay payment successful<br>";
                 $success .= 'Payment ID: '.$response_params['merchant_reference_number']."<br>";
                 $success .= 'Receipt link: '.$response_params['receipt_url']."<br>";
                 $success .= 'Status link: '.$response_params['status_url']."<br>";
@@ -359,7 +359,7 @@ class WC_Gateway_securepay extends WC_Payment_Gateway
 
                 $redirectUrl = esc_url($woocommerce->cart->get_checkout_url());
                 wc_add_notice( __( 'SecurePay Payment failed.', 'woocommerce' ), 'error' );
-                $error = "Securepay.my payment failed<br>";
+                $error = "SecurePay payment failed<br>";
                 $error .= 'Payment ID: '.$response_params['merchant_reference_number']."<br>";
                 $error .= 'Retry link: '.$response_params['retry_url']."<br>";
                 $error .= 'Status link: '.$response_params['status_url']."<br>";
