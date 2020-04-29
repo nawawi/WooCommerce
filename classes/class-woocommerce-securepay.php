@@ -346,8 +346,8 @@ class WC_Gateway_securepay extends WC_Payment_Gateway
                 $order->payment_complete();
                 $success = "Securepay.my payment successful<br>";
                 $success .= 'Payment ID: '.$response_params['merchant_reference_number']."<br>";
-                $success .= 'Receipt link: '.$response_params['retry_url']."<br>";
-                $success .= 'Status link: '.$response_params['receipt_url']."<br>";
+                $success .= 'Receipt link: '.$response_params['receipt_url']."<br>";
+                $success .= 'Status link: '.$response_params['status_url']."<br>";
 
                 $order->add_order_note($success);
                 
