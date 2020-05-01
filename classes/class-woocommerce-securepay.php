@@ -4,7 +4,7 @@ class WC_Gateway_securepay extends WC_Payment_Gateway
 {
     public $id = 'securepay';
     private $live_url = "https://securepay.my/api/v1/payments";
-    private $sandbox_url = "https://securepay.my/sandbox-api/v1/payments";
+    private $sandbox_url = "https://sandbox.securepay.my/api/v1/payments";
     private $log;
 
     public function __construct()
